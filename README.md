@@ -10,10 +10,6 @@ This repository is designed to:
 - Provide explanations and documentation for the exercises.
 - Serve as a reference for fellow students or anyone interested in C++ programming.
 
-## Contents
-
-- **/Exercises:** This directory contains my solutions to the exercises, organized by exercise number.
-
 ## How to Use
 
 - Browse the `/Exams` directory to access my solutions to the 5 exams that took place throughout the semester.
