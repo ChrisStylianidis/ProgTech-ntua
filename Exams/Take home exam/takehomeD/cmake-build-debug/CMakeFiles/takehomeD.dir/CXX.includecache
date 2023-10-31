@@ -1,0 +1,16 @@
+#IncludeRegexLine: ^[ 	]*[#%][ 	]*(include|import)[ 	]*[<"]([^">]+)([">])
+
+#IncludeRegexScan: ^.*$
+
+#IncludeRegexComplain: ^$
+
+#IncludeRegexTransform: 
+
+C:/Users/tooul/Desktop/Computer_Programming_NTUA/Second Semester/exams/take_home/takehomeD/container.hpp
+typeinfo
+-
+
+C:/Users/tooul/Desktop/Computer_Programming_NTUA/Second Semester/exams/take_home/takehomeD/main.cpp
+container.hpp
+C:/Users/tooul/Desktop/Computer_Programming_NTUA/Second Semester/exams/take_home/takehomeD/container.hpp
+

@@ -1,0 +1,107 @@
+#include <iostream>
+#include <list>
+#include <vector>
+using namespace std;
+
+void issessoso(vector<int> &A,int N){
+    int i,j,temp;
+    for(i=0; i<N; i++){
+        temp=A[i];
+        j=i-1;
+        while(j>=0&&A[j]<temp){
+            A[j+1]=A[j];
+            j--;}
+        A[j+1]=temp;}}
+
+enum state{ UN , SE , VI };//Unvisited Seen Visited
+class Graph{
+public:
+    Graph(int n): grafos(n),size(n),status(n){};
+    ~Graph(){grafos.clear();};
+    void addEdge(int u,int v){
+        grafos[u].push_back(v);
+        status[u].push_back(UN);
+    };
+
+
+    const vector<int> & edge(int u) const{
+                return grafos[u];}
+
+    bool cycle(vector<int> &path) {
+        dfs();
+        //for(int i: ans){cout<<i<<" ";} cout<<'\n';
+        vector<int> testme;
+        int here;
+        for(int x: ans){
+            if(x!=-1)
+                testme.push_back(x);
+            else{
+                if(testme.size()!=1 && testme.size()!=2 && check(testme,here)){
+
+                    for(int i=here;i<testme.size();++i){
+                        path.push_back(testme[i]);
+                    }
+                    return true;}
+                testme.clear();
+            }
+        }
+        return false;
+    };
+
+    void dfs_help(int u,int v ) {
+
+        status[u][v]=SE;
+        int value=grafos[u][v];
+        ans.push_back(value);
+        //cout<<value<<" ";
+        for(int x=0; x<grafos[value].size();++x){
+            if(status[value][x]==UN){
+                dfs_help(value,x);
+            }else{   //cout<<endl;
+                if(ans.back()!=-1)
+                    ans.push_back(-1);}
+        }
+        //cout<<endl;
+        if(ans.back()!=-1)
+            ans.push_back(-1);
+        status[u][v]=VI;
+    };
+    void dfs( ) {
+        for(int u=0;u<size;++u)
+            for (int v = 0; v < edge(u).size(); ++v) {
+                if(status[u][v]==UN){
+                    //cout<<x<<" ";
+                    dfs_help(u,v);}  }
+
+        //cout<<"ans"<<endl;
+        //for(int i=0;i<ans.size();++i)cout<<ans[i]<<" ";
+        //cout<<endl;
+    };
+
+    bool check(const vector<int> &a,int &position) const {
+        //for(int x: a)  cout<<x<<" ";
+        int end=a.back();
+        vector<int> b=edge(end);
+        issessoso(b,b.size());
+        for(int i=a.size()-3;i>=0;--i){
+            for(int x: b){
+                //cout<<"a[i]:"<<a[i]<<"  x:"<<x<<endl;
+                if(a[i]==x){
+                    position=i;
+                    //if(check_loop(a,position)){return true;}
+                    return true;
+                }
+            }
+        }
+        //cout<<end<<endl;
+        return false;
+
+    } 
+
+private:
+    vector<int> ans;
+    vector<vector<int>> grafos;
+    vector<vector<state>> status;
+    int size;
+
+};

@@ -1,0 +1,14 @@
+#IncludeRegexLine: ^[ 	]*[#%][ 	]*(include|import)[ 	]*[<"]([^">]+)([">])
+
+#IncludeRegexScan: ^.*$
+
+#IncludeRegexComplain: ^$
+
+#IncludeRegexTransform: 
+
+C:/Users/tooul/Desktop/Computer_Programming_NTUA/Second Semester/1i seira/stackdemo/main.cpp
+iostream
+-
+stdexcept
+-
+

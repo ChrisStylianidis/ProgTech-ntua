@@ -1,0 +1,3 @@
+C:/Users/tooul/Desktop/Computer_Programming_NTUA/Second Semester/2i seira/specker2n/cmake-build-debug/CMakeFiles/specker2n.dir
+C:/Users/tooul/Desktop/Computer_Programming_NTUA/Second Semester/2i seira/specker2n/cmake-build-debug/CMakeFiles/edit_cache.dir
+C:/Users/tooul/Desktop/Computer_Programming_NTUA/Second Semester/2i seira/specker2n/cmake-build-debug/CMakeFiles/rebuild_cache.dir

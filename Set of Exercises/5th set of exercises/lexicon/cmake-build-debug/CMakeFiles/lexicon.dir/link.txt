@@ -1,0 +1,3 @@
+"C:\Program Files\JetBrains\CLion 2021.1.1\bin\cmake\win\bin\cmake.exe" -E rm -f CMakeFiles\lexicon.dir/objects.a
+C:\PROGRA~1\MINGW-~1\X86_64~1.0-P\mingw64\bin\ar.exe cr CMakeFiles\lexicon.dir/objects.a @CMakeFiles\lexicon.dir\objects1.rsp
+C:\PROGRA~1\MINGW-~1\X86_64~1.0-P\mingw64\bin\X86_64~2.EXE -g -Wl,--whole-archive CMakeFiles\lexicon.dir/objects.a -Wl,--no-whole-archive -o lexicon.exe -Wl,--out-implib,liblexicon.dll.a -Wl,--major-image-version,0,--minor-image-version,0 @CMakeFiles\lexicon.dir\linklibs.rsp

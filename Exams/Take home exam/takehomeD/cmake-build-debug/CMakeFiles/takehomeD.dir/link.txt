@@ -1,0 +1,3 @@
+"C:\Program Files\JetBrains\CLion 2021.1.2\bin\cmake\win\bin\cmake.exe" -E rm -f CMakeFiles\takehomeD.dir/objects.a
+C:\PROGRA~1\MINGW-~1\X86_64~1.0-P\mingw64\bin\ar.exe cr CMakeFiles\takehomeD.dir/objects.a @CMakeFiles\takehomeD.dir\objects1.rsp
+C:\PROGRA~1\MINGW-~1\X86_64~1.0-P\mingw64\bin\X86_64~2.EXE -g -Wl,--whole-archive CMakeFiles\takehomeD.dir/objects.a -Wl,--no-whole-archive -o takehomeD.exe -Wl,--out-implib,libtakehomeD.dll.a -Wl,--major-image-version,0,--minor-image-version,0 @CMakeFiles\takehomeD.dir\linklibs.rsp

@@ -1,0 +1,3 @@
+C:/Users/tooul/Desktop/Computer_Programming_NTUA/Second Semester/exams/secondb/cmake-build-debug/CMakeFiles/rebuild_cache.dir
+C:/Users/tooul/Desktop/Computer_Programming_NTUA/Second Semester/exams/secondb/cmake-build-debug/CMakeFiles/secondb.dir
+C:/Users/tooul/Desktop/Computer_Programming_NTUA/Second Semester/exams/secondb/cmake-build-debug/CMakeFiles/edit_cache.dir

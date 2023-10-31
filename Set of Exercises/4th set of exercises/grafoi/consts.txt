@@ -1,0 +1,149 @@
+#include <iostream>
+#include <list>
+#include <vector>
+using namespace std;
+enum state{ UN , SE , VI };//Unvisited Seen Visited
+class Graph{
+public:
+    Graph(int n): grafosprivate(n),size(n),statusprivate(n){};
+    ~Graph(){grafosprivate.clear(); statusprivate.clear();};
+    void addEdge(int u,int v){
+        grafosprivate[u].push_back(v);
+        statusprivate[u].push_back(UN);
+    };
+
+
+    const vector<int> & edge(int u) const{
+                return grafosprivate[u];}
+
+    bool cycle(vector<int> &path) const{
+        vector<int> testme;
+        //vector<int> ans=dfs();
+        //for(int x: ans) cout<<x<<" ";
+        for(int x: ansprivate){
+
+            if(x!=-1)
+                testme.push_back(x);
+            else{
+                if(testme.size()!=1 && check(testme)){return true;}
+                testme.empty();
+            }
+        }
+        return false;
+    };    void dfs_help(int u,int v,
+                        vector<int> ans,
+    vector<vector<int>> grafos,
+    vector<vector<state>> status ) const{
+
+        status[u][v]=SE;
+        int value=grafos[u][v];
+        ans.push_back(value);
+        //cout<<value<<" ";
+        for(int x=0; x<grafos[value].size();++x){
+            if(status[value][x]==UN){
+                dfs_help(value,x,ans,grafos,status);
+            }else{   //cout<<endl;
+                if(ans.back()!=-1)
+                    ans.push_back(-1);}
+        }
+        //ciout<<endl;
+        if(ans.back()!=-1)
+            ans.push_back(-1);
+        status[u][v]=VI;
+    };
+    void dfs( ) const{
+        vector<int> ans;
+        vector<vector<int>> grafos;
+        vector<vector<state>> status;
+        for(int u=0;u<size;++u)
+            for (int v = 0; v < edge(u).size(); ++v) {
+                if(status[u][v]==UN){
+                    //cout<<x<<" ";
+                    dfs_help(u,v,ans,grafos,status);}  }
+        cout<<"ans"<<endl;
+        for(int i=0;i<ans.size();++i){
+            cout<<ans[i]<<" ";
+        }
+        cout<<endl;
+    };
+    bool check(const vector<int> &a) const {
+        //for(int x: a)  cout<<x<<" ";
+
+        int end=a.back();
+        cout<<end<<endl;
+        return false;
+
+    }
+    void print() {
+        cout<<endl;
+        for(int i=0;i<size;++i) {
+            cout<<i<<": ";
+            for(int x=0;x<grafosprivate[i].size();++x) {
+                cout<<" "<<grafosprivate[i][x]<<" "<<"     ";
+            }//<<status[i][x]
+            cout<<endl;
+        }
+    }
+
+private:
+    vector<int> ansprivate;
+    vector<vector<int>> grafosprivate;
+    vector<vector<state>> statusprivate;
+    int size;
+
+};
+
+
+int main() {
+    int V, E;
+    cin >> V >> E;
+    Graph g(V);
+    for (int i = 0; i < E; ++i) {
+        int u, v;
+        cin >> u >> v;
+        g.addEdge(u, v);
+    }
+
+    vector<int> path;
+    g.dfs();
+    bool c = g.cycle(path);
+
+
+if (c) {
+    cout << "CYCLE: ";
+    for (int i = 0; i < path.size(); ++i)
+        cout << path[i] << (i == path.size()-1 ? "\n" : " ");
+} else {
+cout << "NO CYCLE" << endl;
+ }
+    g.print();
+ }
+
+ /*
+  *
+7 9
+0 1
+0 2
+1 2
+2 3
+3 4
+4 0
+4 6
+1 5
+5 6
+
+4 5
+0 1
+0 2
+1 3
+2 3
+0 3
+
+6 5
+0 1
+0 2
+3 4
+4 5
+5 3
+
+  * */

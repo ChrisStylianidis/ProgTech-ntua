@@ -1,0 +1,137 @@
+//specker1n.cpp
+#include<iostream>
+#include<stdexcept>
+
+using namespace std;
+
+class Move {
+public:
+    // Take sc coins from heap sh and put tc coins to heap th.
+    Move(int sh, int sc, int th, int tc){
+        sha=sh;
+        sca=sc;
+        tha=th;
+        tca=tc;
+    };
+
+    int getSource() const {
+        return sha;
+    };
+    int getSourceCoins() const{
+
+        return sca;
+
+    };
+    int getTarget() const{
+
+        return tha;
+    };
+    int getTargetCoins() const{
+
+        return tca;
+    };
+
+    friend ostream & operator << (ostream &out, const Move &move){
+
+        out<<"takes "<<move.sca<<" coins from heap ";
+        out<<move.sha<<" and puts ";
+        if(move.tca==0){
+            out<<"nothing\n";
+            return out;}
+        out<<move.tca<<" coins to heap "<<move.tha<<"\n";
+        return out;}
+private:
+    int sha,sca,tha,tca;
+
+};
+
+
+
+class State {
+public:
+    // State with h heaps, where the i-th heap starts with c[i] coins.
+    // A total of n players are in the game, numbered from 0 to n-1,
+    // and player 0 is the first to play.
+    State(int h, const int c[], int n){
+        cur=0;
+        coins=new int [h];
+        heaps=h;
+        for(int i=0;i<heaps;i++)
+            coins[i]=c[i];
+        players=n;
+
+
+    };
+    ~State(){delete [] coins;
+        return;}
+
+    void next(const Move &move) throw (logic_error){
+        cur++;
+        if(cur==players)
+            cur=0;
+
+        if ( (move.getSource() < 0) || (move.getSource() > heaps) || (move.getTarget() < 0) || (move.getTarget() > heaps) ){
+            throw logic_error("invalid heap");
+
+        }
+        else if ( (move.getSourceCoins() < 1) || (move.getTargetCoins() < 0) || (move.getSourceCoins() <= move.getTargetCoins()) || ( move.getSourceCoins() > getCoins(move.getSource()) )) {
+
+            throw logic_error("invalid heap");
+        }
+        else{
+            coins[move.getSource()] -= move.getSourceCoins();
+            coins[move.getTarget()] += move.getTargetCoins();
+        }
+
+    };
+    bool winning() const{
+        for(int i=0;i<heaps;i++)
+            if(coins[i]!=0)
+                return false;
+        return true;
+    }
+
+    int getHeaps() const{
+        return heaps;
+    }
+    int getCoins(int h) const throw (logic_error){
+        if(h>=heaps || h<0)
+            throw logic_error("invalid heap");
+        else return coins[h];
+
+    };
+
+    int getPlayers() const{
+        return players;
+    }
+    int getPlaying() const{
+        return cur;
+    };
+
+    friend ostream & operator << (ostream &out, const State &state){
+        int i;
+        int he=heaps;
+        for(i=0;i<he-1;i++)
+            out<<coins[i]<<", ";
+        out<<coins[i]<<" with "<<cur<<"/"<<players<<" playing next";
+        return out;
+    };
+private:
+    static int heaps,players,*coins;
+    static int cur;
+};
+
+
+int main(){
+
+    Move r(1,2,3,4);
+    cout<<r<<endl;
+     int c[3];
+    c[0]=0;
+    c[1]=20;
+    c[2]=17;
+    State s(3,c,5);
+    cout<<s<<endl;
+
+
+    return 0;}

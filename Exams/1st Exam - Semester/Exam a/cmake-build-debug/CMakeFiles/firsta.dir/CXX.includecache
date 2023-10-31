@@ -1,0 +1,16 @@
+#IncludeRegexLine: ^[ 	]*[#%][ 	]*(include|import)[ 	]*[<"]([^">]+)([">])
+
+#IncludeRegexScan: ^.*$
+
+#IncludeRegexComplain: ^$
+
+#IncludeRegexTransform: 
+
+C:/Users/tooul/Desktop/Computer_Programming_NTUA/Second Semester/exams/firsta/main.cpp
+iostream
+-
+string
+-
+map
+-
+

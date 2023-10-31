@@ -1,0 +1,3 @@
+C:/Users/tooul/Desktop/Computer_Programming_NTUA/Second Semester/5i seira/lexicon/cmake-build-debug/CMakeFiles/lexicon.dir
+C:/Users/tooul/Desktop/Computer_Programming_NTUA/Second Semester/5i seira/lexicon/cmake-build-debug/CMakeFiles/edit_cache.dir
+C:/Users/tooul/Desktop/Computer_Programming_NTUA/Second Semester/5i seira/lexicon/cmake-build-debug/CMakeFiles/rebuild_cache.dir

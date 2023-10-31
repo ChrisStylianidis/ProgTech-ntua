@@ -1,0 +1,3 @@
+"C:\Program Files\JetBrains\CLion 2020.3.2\bin\cmake\win\bin\cmake.exe" -E rm -f CMakeFiles\secondb.dir/objects.a
+C:\MinGW\bin\ar.exe cr CMakeFiles\secondb.dir/objects.a @CMakeFiles\secondb.dir\objects1.rsp
+C:\MinGW\bin\g++.exe -g   -Wl,--whole-archive CMakeFiles\secondb.dir/objects.a -Wl,--no-whole-archive  -o secondb.exe -Wl,--out-implib,libsecondb.dll.a -Wl,--major-image-version,0,--minor-image-version,0 @CMakeFiles\secondb.dir\linklibs.rsp
