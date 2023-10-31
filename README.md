@@ -18,7 +18,7 @@ This repository is designed to:
 ## About the Author
 
 I am a student at NTUA's Electrical and Computer Engineering program.
-This repository is my effort to document my journey through the ProgIntro course.
+This repository is my effort to document my journey through the ProgTech course.
 
 ## Contact
 
