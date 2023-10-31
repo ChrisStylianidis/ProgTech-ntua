@@ -17,7 +17,6 @@ This repository is designed to:
 ## How to Use
 
 - Browse the `/Exams` directory to access my solutions to the 5 exams that took place throughout the semester.
-- Browse the `/Practice Exercises` directory to access my solutions to the 7th set of exercises.
 - Browse the `/Set of Exercises` directory to access the exercises and my solutions to them.
 
 ## About the Author
